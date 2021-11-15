@@ -7,6 +7,12 @@ class gourav{
 
 };
 
+class worker{
+
+    private :
+    int age;
+};
+
 int main(){
 
     class gourav{
