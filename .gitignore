@@ -1,6 +1,7 @@
-
+*
 !*.*
 /.vscode
 *.exe
+!*/
 !*.cpp
 .DS_Store
