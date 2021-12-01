@@ -27,7 +27,7 @@ for (int i = 0; i < num-1; i++)
 
     for (int i = 0; i < num; i++)
 {
-    cout<<arr[i];
+    cout<<arr[i]<<" ";
  }  cout<<endl;
 }
     return 0;
