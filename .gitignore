@@ -1,7 +1,14 @@
-*
-!*.*
 /.vscode
 *.exe
 !*/
 !*.cpp
 .DS_Store
+
+.vscode/c_cpp_properties.json
+.vscode/launch.json
+code chef/.vscode/c_cpp_properties.json
+code chef/.vscode/launch.json
+code chef/.vscode/settings.json
+code chef/easy/.vscode/launch.json
+code chef/easy/.vscode/c_cpp_properties.json
+code chef/easy/.vscode/settings.json

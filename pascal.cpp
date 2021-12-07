@@ -31,7 +31,5 @@ for (int i = 0; i < input; i++)
     }
     cout<<endl;
 }
-
-
     return 0;
 }
