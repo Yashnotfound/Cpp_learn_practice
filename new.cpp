@@ -1,30 +1,57 @@
 # include <iostream>
-# include <string>
-# include <cmath>
-# include <vector>
 using namespace std;
 
 int main(){
+	
+	int t;
+	cin >>t;
 
-    string str;
-    vector <char> rev;
-    int temp;
-    int input;
-    int j=0;
+	while(t--)
+	{	
+		int n;
+		cin >>n;
+		int i=0;
+		int j=n-1;
+		int flag=0;
 
-    cin>>str;
+		int arr[n];
+		for (int i = 0; i < n; i++)
+		{
+			cin>>arr[i];
+		}
+		
+		if(arr[0] != 1)
+		{
+			flag=1;
+		}	
 
-    for (int i = str.length()-1; i >= 0; i--)
-    {
-        rev[j]=str[i];
-        j++;
-    }
+		while(i<j)
+		{
 
-   for (int i = 0; i < rev.size(); i++)
-   {
-       cout<<rev.at(i);
-   }
-   
+		if(arr[i]!=arr[j] )
+		{
+			flag=1;
+			break;
+		}
 
-    return 0;
+		if(arr[i]!=arr[i+1] && arr[i+1]-arr[i] != 1)
+		{
+			flag=1;
+			break;
+		}
+
+		i++;
+		j--;	
+		}
+
+		if(arr[i]!=7)
+		{flag=1;}
+
+		if(!flag)
+		{cout<<"yes"<<endl;}
+		else{cout<<"no"<<endl;}
+	}
+
+	
+	return 0;
 }

@@ -1,6 +1,26 @@
 # include <iostream>
 using namespace std;
 
+class complex{
+
+int a,b;
+
+public :
+
+void getdata()
+{
+    cout<<"real part is "<<a<<endl;
+    cout<<"imaginary part is "<<b<<endl;
+}
+
+void setdata(int x,int y)
+{
+a=x;
+b=y;
+}
+
+};
+
 int* arra(int a)
 {
    int *ar = new int [a];
@@ -51,5 +71,18 @@ int main(){
     cout<<*(ar+1)<<endl;
     cout<<*(ar+2)<<endl;
     
+    complex (*ptr) = new complex;
+
+    ptr->setdata(3,4);
+    ptr->getdata();
+
+    //same as
+
+    (*ptr).setdata(3,4);
+    (*ptr).getdata();
+
+    //same goes with arrays
+   // a base class can point to a derived class (late binding), but can only access the elements of base class.
+   
     return 0;
 }
