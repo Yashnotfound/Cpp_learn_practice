@@ -1,10 +1,6 @@
 # include <iostream>
 using namespace std;
 int main() {
-int t;
-cin>>t;
-while(t--)
-{
     int n,m,k,q;
     cin>>n>>m>>k>>q;
     int arr[n][m];
@@ -31,23 +27,19 @@ while(t--)
        }
    } 
 int cumsum[n][m];
-    int sum1=0;
     for (int i = 0; i < n; i++)
-    {   int sum2=0;
+    { 
         for (int j = 0; j < m; j++)
         {
-            if(i==0&&j==0)
-            {cumsum[i][j]=arr[i][j];}
-            else if(i==0&&j>0)
-            {
-                cumsum[0][j]=cumsum[0][j-1]+arr[0][j];
-            }
-            else if(i>0&&j==0)
-            {
-                cumsum[i][0]=cumsum[i-1][0]+arr[i][0];
-            }
-            else if(i>0&&j>0)
-            {cumsum[i][j]=cumsum[i][j-1]+cumsum[i-1][j]-cumsum[i-1][j-1]+arr[i][j];}
+            
+            cumsum[i][j]=arr[i][j];
+            if(i>0)
+            {cumsum[i][j]+=cumsum[i-1][j];}
+            if(j>0)
+            {cumsum[i][j]+=cumsum[i][j-1];}
+            if(i>0&&j>0)
+            {cumsum[i][j]-=cumsum[i-1][j-1];}
+            
         }
     }
     
@@ -60,17 +52,14 @@ for (int i = 0; i < n; i++)
     cout<<endl;
 }
 
-while(q--)
-{
-int r1,c1,r2,c2;
-cin>>r1>>c1>>r2>>c2;
-for (int i = 0; i < count; i++)
-{
-    /* code */
-}
+// while(q--)
+// {
+// int r1,c1,r2,c2;
+// cin>>r1>>c1>>r2>>c2;
+// for (int i = 0; i < count; i++)
+// {
+//     /* code */
+// }
 
-
-}
-}
 return 0;
 }

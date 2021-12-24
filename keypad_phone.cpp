@@ -65,7 +65,8 @@ int main(){
     for (int i = 0; i < count; i++)
     {
         cout<<output[i]<<endl;
+        
     }
-    
+    cout<<count;
     return 0;
 }

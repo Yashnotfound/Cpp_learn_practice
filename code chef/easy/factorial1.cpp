@@ -1,32 +1,56 @@
-#include <iostream>
+# include <iostream>
 using namespace std;
 
-int factorial(int input)
-{   int factor=1;
-    if(input==0)
-{return 1;}
+int main(){
+    
+    int t;
+    cin>>t;
+    while(t--)
 
-    for (int i = 0; i < input; i++)
-        factor = factor * (input - i);
     {
-        if (input == 0)
-        {   factor = 1;}
-    } 
-    return factor;
-}
 
-int main()
-{
+        int n;
+        cin>>n;
+        int copy=n;
+        int arr[200];
+        int i=0;
+        while(copy)
+        {   
+            int temp = copy%10;
+            copy = copy/10;
+            arr[i]=temp;
+            i++;
+        }
+    int num;
 
-    int loop_var;
-    int input;
-    cin >> loop_var;
+        for (int j = 2; j < n; j++)
+        {
+            int temp=0;
+            int index=0;
+            for( index=0;index<i;index++)
+            {
+                num = arr[index]*j+temp;
+                arr[index]=num%10;
+                temp=num/10;
+            }
  
-    for (int i = 0; i < loop_var; i++)
-    {
-        cin >> input;
-        cout << factorial(input) << endl;
+            while(temp)
+            {
+                arr[index]=temp%10;
+                temp=temp/10;
+                index++;
+                i++;
+            }
+        }
+        
+        for (int j = i-1; j >= 0; j--)
+        {
+            cout<<arr[j];
+        }
+        
+cout<<endl;
+
     }
 
     return 0;
-}
+} 

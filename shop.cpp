@@ -53,7 +53,7 @@ void menu();
 void query_num(vector<shop>,int);
 void query_name(vector<shop>,string);
 void query_sort(vector<shop>);
-
+ 
 int main(){
 
 int choice=0;

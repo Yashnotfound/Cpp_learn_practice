@@ -3,6 +3,8 @@
     "files.associations": {
         "type_traits": "cpp",
         "vector": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "new": "cpp",
+        "ostream": "cpp"
     }
 }

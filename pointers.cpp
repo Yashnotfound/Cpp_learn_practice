@@ -70,16 +70,18 @@ int main(){
     cout<<*(ar)<<endl;
     cout<<*(ar+1)<<endl;
     cout<<*(ar+2)<<endl;
-    
-    complex (*ptr) = new complex;
+     
+    complex (*ptr) = new complex[3];
 
     ptr->setdata(3,4);
     ptr->getdata();
+    (ptr+1)->setdata(5,6);
+    (ptr+1)->getdata();
 
-    //same as
+    //same as 
 
-    (*ptr).setdata(3,4);
-    (*ptr).getdata();
+     (*ptr).setdata(3,4);
+     (*ptr).getdata();
 
     //same goes with arrays
    // a base class can point to a derived class (late binding), but can only access the elements of base class.
