@@ -3,7 +3,8 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <vector>
-
+# include <algorithm>
+ 
 using namespace std;
 const int gst = 18;
 
@@ -37,6 +38,9 @@ string ret_itemname()
 int ret_itemno()
 {return itemno;}
 
+int ret_itemprice()
+{return price;}
+
 void display()
 {
 
@@ -48,9 +52,10 @@ cout<<"item price after tax : "<<calculate()<<endl;
 }
 
 };
-
+ 
 void menu();
 void query_num(vector<shop>,int);
+bool pricesort(shop &s1,shop &s2);
 void query_name(vector<shop>,string);
 void query_sort(vector<shop>);
  
@@ -89,8 +94,8 @@ case 3 : cout<<"enter the name of the item you want to search : ";
          query_name(s,search_name);
             break;
 
-case 4 : cout<<"sorting item name and number by price : ";
-       //query_sort(s);
+case 4 : cout<<"sorting item name and number by price : "<<endl;
+         query_sort(s);
             break;
 
 case 5 : cout<<"Exiting the program ";
@@ -100,7 +105,7 @@ default : cout<<"please try again ";
           system("pause");     
     
 }
-
+ 
  
 }
 
@@ -152,10 +157,24 @@ void query_name(vector<shop> s, string name)
             break;
         }
     }       if(!flag)
-    {cout<<"invalid name, please try again. ";}
+    {cout<<"invalid name, please try again. "<<endl;}
     system("pause");
 }
  
-     
+void query_sort(vector<shop> s)
+{
+    sort(s.begin(),s.end(),pricesort);
+    for (int i = 0; i < s.size(); i++)
+    {
+        s[i].display(); 
+        cout<<"*************************"<<endl;
+    }
+        system("pause");
     
 
+}    
+    
+bool pricesort(shop &s1,shop &s2)
+{
+    return s1.ret_itemprice() < s2.ret_itemprice();
+}
