@@ -22,6 +22,11 @@ void divideTwoNumbers(long a, long b)
         else {cout<<a/b<<endl;}
     }
 
+void modtwonumbers(long a, long b)
+{
+    cout<<a%b<<endl;
+}
+
 int main(){
     
     long a,b;
@@ -35,7 +40,9 @@ int main(){
     if(c=='*')
     {multiplyTwoNumbers(a,b);}
     if(c=='/')
-    {divideTwoNumbers(a,b);}  
+    {divideTwoNumbers(a,b);}
+    if(c=='%')
+    {modtwonumbers(a,b);}  
 
     return 0;
 }
