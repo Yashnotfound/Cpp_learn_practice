@@ -1,51 +1,27 @@
-# include <iostream>
-# include <vector>
+# include <bits/stdc++.h>
+#define ll long long
 using namespace std;
 
-class arrays{
-
-int no_array;
-int no_query;
-int no_input;
-vector<vector<int> > out;
-int temp;
-
-public :
-
-void input()
-{
-    cin>>no_array>>no_query;
-    for (int i = 0; i < no_array; i++)
+int main(){
+    int n,q;
+    cin>>n>>q;
+    vector< vector<int> > out;
+    while(n--)
     {
-        vector<int> in;
-        cin>>no_input;
-        for (int i = 0; i < no_input; i++)
+        int nsize;
+        cin>>nsize;
+        vector<int> in (nsize);
+        for(auto &it : in)
         {
-            cin>>temp;
-            in.push_back(temp);
-
+            cin>>it;
         }
         out.push_back(in);
     }
-}
-
-void query_solve()
-{
-    int out_num,in_num;
-    for (int i = 0; i < no_query; i++)
+    while(q--)
     {
-        cin>>out_num>>in_num;
-        cout<<out[out_num][in_num];
+        int i,j;
+        cin>>i>>j;
+        cout<<out[i][j]<<endl;
     }
-}
-
-};
-
-int main() {
-
-arrays a1;
-
-a1.input();
-a1.query_solve();
-return 0;
+    return 0;
 }
